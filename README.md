@@ -1,6 +1,11 @@
 # mc-1.7.3-orchestrator
 
-A small Go HTTP API that keeps track of Minecraft Beta 1.7.3 hosts and server instances.
+A small Go HTTP API that orchestrates Minecraft Beta 1.7.3 servers across your machines.
+
+It manages hosts (machines reached over SSH, or `localhost`) and the server instances
+running on them. Instances are installed and managed with
+[minecraft-b1.7.3-server](https://github.com/ozzenerol/minecraft-b1.7.3-server), which sets
+each server up as a systemd service with the `mcserver` management tool.
 
 ## Run
 
