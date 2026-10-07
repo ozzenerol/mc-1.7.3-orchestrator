@@ -1,0 +1,26 @@
+Single Go backend, Postgres as the database.
+
+http/net
+sqlc / pgx / goose
+
+1. CRUD operations on Hosts
+    - ID            (UUID, primary key, auto generated)
+    - Name
+    - IP            (localhost if it's the local machine)
+    - Created At        
+    
+    Thread that checks that the server is reachable through SSH every N seconds. Skip if IP == `localhost`
+
+2. CRUD operations on Instances
+    - ID            (UUID, primary key, auto generated)
+    - Host ID       (UUID, foreign key)
+    - Port          
+    - Max Players
+    - Dedicated RAM 
+    - LogPath
+    - Created At
+    - Status        (ONLINE | OFFLINE | STARTING)
+
+    Thread that checks the status and other server stats every N seconds
+
+

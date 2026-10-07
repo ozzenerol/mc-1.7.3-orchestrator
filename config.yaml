@@ -1,0 +1,24 @@
+server:
+  port: 10200
+
+database:
+  host: localhost
+  port: 6000
+  name: mc173orchestrator
+  user: mc
+  password: mc
+
+ssh:
+  user: root
+  key_path: ~/.ssh/id_ed25519
+  port: 22
+  timeout_seconds: 10
+
+flags:
+  max_players: 10
+  min_port: 1024
+  max_port: 65535
+  host_check_interval_seconds: 30
+  instance_check_interval_seconds: 10
+  min_ram: 128
+  max_ram: 2048
