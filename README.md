@@ -35,6 +35,10 @@ one file per package (`internal/host` -> `http/hosts.http`), one request per rou
 - The agent can only read the project and edit files inside `http/`. It never touches Go code.
 - `http/http-client.env.json` holds `{{base}}`. The script creates it once from the port in `config.yaml`.
 - Files for packages that no longer exist are deleted by the script, not the agent.
+- After the agent runs, `http-postman.py` builds `http/postman_collection.json` from the
+  `.http` files (one folder per file, `{{base}}` as a collection variable, `@name` response ids
+  saved by test scripts). Import it into Postman. It is regenerated on every run, so edit the
+  `.http` files, not the collection. Run `./http-postman.py` alone to rebuild it without the agent.
 
 Run it again whenever you add or change a route.
 

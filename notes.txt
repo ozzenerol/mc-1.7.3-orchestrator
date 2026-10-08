@@ -9,7 +9,7 @@ sqlc / pgx / goose
     - IP            (localhost if it's the local machine)
     - Created At        
     
-    Thread that checks that the server is reachable through SSH every N seconds. Skip if IP == `localhost`
+    Thread that checks that the server is reachable through SSH every N seconds. Skip ssh if IP == `localhost`
 
 2. CRUD operations on Instances
     - ID            (UUID, primary key, auto generated)
@@ -21,6 +21,6 @@ sqlc / pgx / goose
     - Created At
     - Status        (ONLINE | OFFLINE | STARTING)
 
-    Thread that checks the status and other server stats every N seconds
+    Thread that checks the status and other server stats every N seconds (SSH if remote, not if localhost)
 
 

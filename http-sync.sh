@@ -49,6 +49,8 @@ unless the route they target no longer exists or its method/path/fields changed.
 5. If a whole .http file no longer matches any package, do not delete it yourself.
    Instead write its filename (one per line) to http/.delete.
 
+http/postman_collection.json is generated from the .http files after you finish. Do not edit it.
+
 Only write inside ./http. Never modify Go code or anything else. Do not commit.
 End with a short plain list of what you added, changed or removed.
 EOF
@@ -64,6 +66,8 @@ if [[ -f http/.delete ]]; then
   done < http/.delete
   rm -f http/.delete
 fi
+
+./http-postman.py
 
 if [[ -n $(git -C http status --porcelain) ]]; then
   git -C http add -A
